@@ -18,33 +18,32 @@ const YouTubeEmbed = ({ limit = 3, channelId = "LifeWithFaithAminaho" }: YouTube
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  // For now, using representative sample videos from the channel
   useEffect(() => {
-    // In a production environment, this would fetch from YouTube API
-    const latestVideos = [
+    // These are the specific videos requested by the user
+    const requestedVideos = [
       {
-        id: "Sirs2fhPBgY",
-        title: "Life in the UK: My Immigration Journey and How to Navigate Your Path",
-        thumbnail: "https://i3.ytimg.com/vi/Sirs2fhPBgY/maxresdefault.jpg",
-        url: "https://youtu.be/Sirs2fhPBgY?si=FiINmkh0bTXtsEZ0"
+        id: "pDW4IYVlbbw",
+        title: "EASY JOLLOF RICE RECIPE | HOW TO COOK THE PERFECT JOLLOF RICE",
+        thumbnail: "https://i3.ytimg.com/vi/pDW4IYVlbbw/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=pDW4IYVlbbw"
       },
       {
-        id: "dnWnm98ZQ5c",
-        title: "How to Balance Work, Studies, and Personal Life | Practical Tips for Immigrants",
-        thumbnail: "https://i3.ytimg.com/vi/dnWnm98ZQ5c/maxresdefault.jpg",
-        url: "https://youtu.be/dnWnm98ZQ5c"
+        id: "UcmsiF-JTlk",
+        title: "5 Amazing Benefits of Becoming a USA Citizen",
+        thumbnail: "https://i3.ytimg.com/vi/UcmsiF-JTlk/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=UcmsiF-JTlk"
       },
       {
-        id: "RkHTsxsKtjE",
-        title: "Finding Your Community: Building Connections in a New Country",
-        thumbnail: "https://i3.ytimg.com/vi/RkHTsxsKtjE/maxresdefault.jpg",
-        url: "https://youtu.be/RkHTsxsKtjE"
+        id: "GzYJUhN2ESQ",
+        title: "Top Reasons New US Citizens Regret Becoming Citizens",
+        thumbnail: "https://i3.ytimg.com/vi/GzYJUhN2ESQ/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=GzYJUhN2ESQ"
       }
     ];
     
-    setVideos(latestVideos);
-    if (latestVideos.length > 0) {
-      setSelectedVideo(latestVideos[0].id);
+    setVideos(requestedVideos);
+    if (requestedVideos.length > 0) {
+      setSelectedVideo(requestedVideos[0].id);
     }
     setLoading(false);
   }, []);
