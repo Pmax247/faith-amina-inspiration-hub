@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Youtube, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -53,7 +54,13 @@ const Index = () => {
       
       {/* Video Gallery Section */}
       <section className="py-12 bg-gray-50">
-        
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Latest Videos</h2>
+            <p className="text-gray-600">Explore our most recent content from the YouTube channel</p>
+          </div>
+          <YouTubeEmbed />
+        </div>
       </section>
       
       {/* Topics Section */}
@@ -66,9 +73,9 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Topic 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow. https://youtu.be/Sirs2fhPBgY?si=FiINmkh0bTXtsEZ0">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-cover bg-center" style={{
-              backgroundImage: "url('/lovable-uploads/1a57df7c-2cc7-480f-8173-d8a701d4acae.png')"
+              backgroundImage: "url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1931&auto=format&fit=crop')"
             }}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">UK Immigration Guide</h3>
@@ -84,7 +91,7 @@ const Index = () => {
             {/* Topic 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-cover bg-center" style={{
-              backgroundImage: "url('/lovable-uploads/7c481c74-6d41-47dc-b127-aebb7db88f99.png')"
+              backgroundImage: "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1170&auto=format&fit=crop')"
             }}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Personal Development</h3>
@@ -100,7 +107,7 @@ const Index = () => {
             {/* Topic 3 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-cover bg-center" style={{
-              backgroundImage: "url('/lovable-uploads/a20b09b6-cd74-4af1-bb14-e2399a891e80.png')"
+              backgroundImage: "url('https://images.unsplash.com/photo-1578909196400-59f8f8156a05?q=80&w=1170&auto=format&fit=crop')"
             }}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Creative Expression</h3>

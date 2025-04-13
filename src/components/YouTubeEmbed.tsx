@@ -5,6 +5,7 @@ interface Video {
   id: string;
   title: string;
   thumbnail: string;
+  url: string;
 }
 
 interface YouTubeEmbedProps {
@@ -17,30 +18,33 @@ const YouTubeEmbed = ({ limit = 3, channelId = "LifeWithFaithAminaho" }: YouTube
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  // For now, using a placeholder list of videos since we don't have API integration yet
+  // For now, using representative sample videos from the channel
   useEffect(() => {
-    // This would normally fetch from YouTube API
-    const dummyVideos = [
+    // In a production environment, this would fetch from YouTube API
+    const latestVideos = [
       {
-        id: "dQw4w9WgXcQ", // This is a placeholder - we'd fetch real IDs from the API
-        title: "UK Immigration Nightmares - Avoiding Scams",
-        thumbnail: "/lovable-uploads/1a57df7c-2cc7-480f-8173-d8a701d4acae.png"
+        id: "Sirs2fhPBgY",
+        title: "Life in the UK: My Immigration Journey and How to Navigate Your Path",
+        thumbnail: "https://i3.ytimg.com/vi/Sirs2fhPBgY/maxresdefault.jpg",
+        url: "https://youtu.be/Sirs2fhPBgY?si=FiINmkh0bTXtsEZ0"
       },
       {
-        id: "yJ1GZTH4Ivw", // Another placeholder
-        title: "Immigrant's Success Story - From Struggle to Triumph",
-        thumbnail: "/lovable-uploads/7c481c74-6d41-47dc-b127-aebb7db88f99.png"
+        id: "dnWnm98ZQ5c",
+        title: "How to Balance Work, Studies, and Personal Life | Practical Tips for Immigrants",
+        thumbnail: "https://i3.ytimg.com/vi/dnWnm98ZQ5c/maxresdefault.jpg",
+        url: "https://youtu.be/dnWnm98ZQ5c"
       },
       {
-        id: "C0DPdy98e4c", // Another placeholder
-        title: "About the Channel - Life with Faith Aminaho",
-        thumbnail: "/lovable-uploads/a20b09b6-cd74-4af1-bb14-e2399a891e80.png"
+        id: "RkHTsxsKtjE",
+        title: "Finding Your Community: Building Connections in a New Country",
+        thumbnail: "https://i3.ytimg.com/vi/RkHTsxsKtjE/maxresdefault.jpg",
+        url: "https://youtu.be/RkHTsxsKtjE"
       }
     ];
     
-    setVideos(dummyVideos);
-    if (dummyVideos.length > 0) {
-      setSelectedVideo(dummyVideos[0].id);
+    setVideos(latestVideos);
+    if (latestVideos.length > 0) {
+      setSelectedVideo(latestVideos[0].id);
     }
     setLoading(false);
   }, []);
@@ -75,40 +79,58 @@ const YouTubeEmbed = ({ limit = 3, channelId = "LifeWithFaithAminaho" }: YouTube
           <div 
             key={video.id}
             className={`cursor-pointer group transition-all duration-300 ${selectedVideo === video.id ? 'ring-2 ring-brand-red' : ''}`}
-            onClick={() => setSelectedVideo(video.id)}
           >
-            <div className="relative aspect-video overflow-hidden">
-              <img 
-                src={video.thumbnail} 
-                alt={video.title} 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-6 w-6 text-white" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" 
-                    />
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-                    />
-                  </svg>
+            <a 
+              href={video.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedVideo(video.id);
+              }}
+              className="block"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img 
+                  src={video.thumbnail} 
+                  alt={video.title} 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-6 w-6 text-white" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" 
+                      />
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
             <h3 className="mt-2 font-medium line-clamp-2">{video.title}</h3>
+            <a 
+              href={video.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-brand-red hover:underline text-sm"
+            >
+              Watch on YouTube
+            </a>
           </div>
         ))}
       </div>
