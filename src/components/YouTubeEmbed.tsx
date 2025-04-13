@@ -22,22 +22,22 @@ const YouTubeEmbed = ({ limit = 3, channelId = "LifeWithFaithAminaho" }: YouTube
     // These are the specific videos requested by the user
     const requestedVideos = [
       {
-        id: "pDW4IYVlbbw",
-        title: "EASY JOLLOF RICE RECIPE | HOW TO COOK THE PERFECT JOLLOF RICE",
-        thumbnail: "https://i3.ytimg.com/vi/pDW4IYVlbbw/maxresdefault.jpg",
-        url: "https://www.youtube.com/watch?v=pDW4IYVlbbw"
+        id: "1xyGRWhKbfo",
+        title: "Seeking Asylum In The US | WHAT YOU NEED TO KNOW",
+        thumbnail: "https://i3.ytimg.com/vi/1xyGRWhKbfo/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=1xyGRWhKbfo"
       },
       {
-        id: "UcmsiF-JTlk",
-        title: "5 Amazing Benefits of Becoming a USA Citizen",
-        thumbnail: "https://i3.ytimg.com/vi/UcmsiF-JTlk/maxresdefault.jpg",
-        url: "https://www.youtube.com/watch?v=UcmsiF-JTlk"
+        id: "Sirs2fhPBgY",
+        title: "Life in the UK: My Immigration Journey and How to Navigate Your Path",
+        thumbnail: "https://i3.ytimg.com/vi/Sirs2fhPBgY/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=Sirs2fhPBgY"
       },
       {
-        id: "GzYJUhN2ESQ",
-        title: "Top Reasons New US Citizens Regret Becoming Citizens",
-        thumbnail: "https://i3.ytimg.com/vi/GzYJUhN2ESQ/maxresdefault.jpg",
-        url: "https://www.youtube.com/watch?v=GzYJUhN2ESQ"
+        id: "Jvt2UYzkzGU",
+        title: "Why I Became British | Pros and Cons of Being a British Citizen",
+        thumbnail: "https://i3.ytimg.com/vi/Jvt2UYzkzGU/maxresdefault.jpg",
+        url: "https://www.youtube.com/watch?v=Jvt2UYzkzGU"
       }
     ];
     
