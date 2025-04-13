@@ -66,7 +66,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Topic 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow. https://youtu.be/Sirs2fhPBgY?si=FiINmkh0bTXtsEZ0">
               <div className="h-48 bg-cover bg-center" style={{
               backgroundImage: "url('/lovable-uploads/1a57df7c-2cc7-480f-8173-d8a701d4acae.png')"
             }}></div>
